@@ -1,14 +1,21 @@
 {
     "name": "zfbrasil/proxposer",
     "description": "Proxy to use private repos with composer",
+    "repositories": [
+        {"type": "composer", "url": "http://127.0.0.1:8000/repo/private/"}
+    ],
     "require": {
         "php": ">=5.5",
         "zendframework/zendframework": "2.3.*",
         "doctrine/doctrine-orm-module": "0.*",
-        "zfbrasil/repository-manager": "~0.1"
+        "zfbrasil/proxposer-api": "dev-feature/default-configs",
+        "zfbrasil/proxposer-api-repository": "dev-feature/repository-rest-service",
+        "beberlei/assert": "dev-hotfix/allow-any-protocol-in-url-assertion as 2.1",
+        "zfcampus/zf-hal": "1.0.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.6@dev"
+        "phpunit/phpunit": "~4.6@dev",
+        "zfcampus/zf-apigility-admin": "~1.0"
     },
     "license": "MIT",
     "authors": [

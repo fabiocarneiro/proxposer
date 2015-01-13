@@ -1,22 +1,20 @@
 <?php
 
-use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
+use Doctrine\DBAL\Driver\PDOMySql\Driver;
 
 return [
     'doctrine' => [
-        'driver' => [
-            'proxposer_driver' => [
-                'class' => AnnotationDriver::class,
-                'cache' => 'array',
-                'paths' => [
-                    __DIR__ . '/../src/Entity'
-                ],
-            ],
+        'connection' => [
             'orm_default' => [
-                'drivers' => [
-                    'ZFBrasil\Proxposer\Entity' => 'proxposer_driver'
+                'driverClass' => Driver::class,
+                'params' => [
+                    'host' => 'localhost',
+                    'port' => '3306',
+                    'user' => 'root',
+                    'password' => '',
+                    'dbname' => 'proxposer',
                 ]
             ]
         ]
-    ]
+    ],
 ];

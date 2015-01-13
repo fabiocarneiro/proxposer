@@ -20,4 +20,9 @@ temp/
 demos/
 extras/documentation
 
-.idea/*
+# Ide
+.idea
+.nbproject
+
+# Apigility
+config/development.config.php
